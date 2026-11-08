@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "BOOTH Shop URL Redirect",
+  "version": "1.0.0",
+  "description": "booth.pm/<언어>/items/<id> 주소로 접속하면 <제작자>.booth.pm/items/<id> 주소로 자동 이동합니다.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://booth.pm/*/items/*",
+        "https://booth.pm/items/*",
+        "https://www.booth.pm/*/items/*",
+        "https://www.booth.pm/items/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
